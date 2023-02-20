@@ -4,8 +4,10 @@ const authUser = require("./middleware/authUser.middleware");
 const postRoute = require("./routes/post.route");
 const userRoute = require("./routes/user.routes");
 mongoose.set('strictQuery', false)
+const cors = require("cors")
 require("dotenv").config()
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.use("/users",userRoute)
